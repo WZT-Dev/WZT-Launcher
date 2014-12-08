@@ -83,7 +83,7 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 		this.setPreferredSize(new Dimension(540, 400));
 		this.setResizable(false);
 		final Container pane = this.getContentPane();
-		pane.setBackground(new Color(241, 237, 228));
+		pane.setBackground(new Color(0, 77, 119));
 		final JLabel lblLogo = new JLabel(new ImageIcon(LauncherConstants.LAUNCHER_IMAGE));
 		final JProgressBar prgBarDownload = new JProgressBar();
 		prgBarDownload.setStringPainted(true);
@@ -212,7 +212,7 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 			final JLabel label = status.get(entry.getKey());
 			if(entry.getValue()) {
 				label.setText("ONLINE");
-				label.setForeground(Color.GREEN);
+				label.setForeground(new Color(255, 255, 255));
 			}
 			else {
 				label.setText("UNREACHABLE");

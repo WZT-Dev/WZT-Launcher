@@ -26,7 +26,7 @@ public class LauncherConstants {
 	public static final String LAUNCHER_PREFIX = "[Launcher] ";
 	public static final Font LAUNCHER_FONT = loadFontFromRes(Font.TRUETYPE_FONT, "/fr/skyost/launcher/res/Ubuntu-L.ttf", 13f);
 	public static final Image LAUNCHER_ICON = loadImageFromRes("/fr/skyost/launcher/res/Icon.png");
-	public static final Image LAUNCHER_IMAGE = loadImageFromRes("/fr/skyost/launcher/res/Skyolauncher.png");
+	public static final Image LAUNCHER_IMAGE = loadImageFromRes("/fr/skyost/launcher/res/launcher-banner.png");
 
 	/* Client options. */
 

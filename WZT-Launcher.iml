@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="commons-lang3-3.3.2-javadoc" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.3.2" level="project" />
     <orderEntry type="library" name="gson-2.3.1" level="project" />
     <orderEntry type="library" name="pgslookandfeel-1.1.2" level="project" />
   </component>

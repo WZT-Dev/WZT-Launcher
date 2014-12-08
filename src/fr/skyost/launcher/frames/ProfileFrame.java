@@ -50,7 +50,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 
 	private static final long serialVersionUID = 1L;
 	private LauncherProfile loadedProfile;
-	private static final Color BACKGROUND_COLOR = new Color(241, 237, 228);
+	private static final Color BACKGROUND_COLOR = new Color(255, 255, 255);
 	protected final JTextField txtfldProfileName = new JTextField();
 	protected final DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>() {
 
