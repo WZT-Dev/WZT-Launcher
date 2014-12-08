@@ -121,7 +121,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 		this.setAlwaysOnTop(true);
 		this.loadedProfile = profile;
 		this.setIconImage(LauncherConstants.LAUNCHER_ICON);
-		this.setTitle("Skyolauncher Profile Editor");
+		this.setTitle("WZT-Launcher Profile Editor");
 		this.setPreferredSize(new Dimension(720, 292));
 		this.setType(Type.POPUP);
 		final Container pane = this.getContentPane();

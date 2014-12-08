@@ -20,9 +20,9 @@ public class LauncherConstants {
 	/* Launcher globals options. */
 
 	public static final String LAUNCHER_NAME = "WZT Launcher";
-	public static final String LAUNCHER_VERSION = "0.2.2";
+	public static final String LAUNCHER_VERSION = "0.1";
 	public static final String LAUNCHER_STATUS = "BETA";
-	public static final String[] LAUNCHER_AUTHORS = new String[]{"Skyost"};
+	public static final String[] LAUNCHER_AUTHORS = new String[]{"WallE256","and","WoophRadu"};
 	public static final String LAUNCHER_PREFIX = "[Launcher] ";
 	public static final Font LAUNCHER_FONT = loadFontFromRes(Font.TRUETYPE_FONT, "/fr/skyost/launcher/res/Ubuntu-L.ttf", 13f);
 	public static final Image LAUNCHER_ICON = loadImageFromRes("/fr/skyost/launcher/res/Icon.png");
