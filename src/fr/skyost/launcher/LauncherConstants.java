@@ -19,7 +19,7 @@ public class LauncherConstants {
 
 	/* Launcher globals options. */
 
-	public static final String LAUNCHER_NAME = "Skyolauncher";
+	public static final String LAUNCHER_NAME = "WZT Launcher";
 	public static final String LAUNCHER_VERSION = "0.2.2";
 	public static final String LAUNCHER_STATUS = "BETA";
 	public static final String[] LAUNCHER_AUTHORS = new String[]{"Skyost"};
@@ -52,7 +52,7 @@ public class LauncherConstants {
 	/* ConnectivityChecker options. */
 	
 	public static final String CONNECTIVITY_CHECKER_PREFIX = "[Connectivity] ";
-	public static final String[] CONNECTIVITY_CHECKER_URLS = new String[]{"http://www.google.com", "http://www.facebook.com", "http://www.yahoo.fr", "http://www.skyost.eu"};
+	public static final String[] CONNECTIVITY_CHECKER_URLS = new String[]{"http://www.google.com", "http://www.facebook.com", "http://www.yahoo.ro", "http://www.wzt.ro"};
 	
 	/* ChangelogDownloader options. */
 	
@@ -72,7 +72,7 @@ public class LauncherConstants {
 	public static final String ASSETS_INDEXES_SUFFIX = "/indexes";
 	public static final String ASSETS_VIRTUAL_SUFFIX = "/virtual";
 	public static final String ASSETS_LEGACY_SUFFIX = "/legacy";
-	public static final String MINECRAFT_SERVER_IP = null; // Leave null if you do not want to enable this option.
+	public static final String MINECRAFT_SERVER_IP = "mc.playro.eu"; // Leave null if you do not want to enable this option.
 	public static final short MINECRAFT_SERVER_PORT = 25565;
 
 	/* RefreshToken options. */
