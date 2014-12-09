@@ -1,42 +1,40 @@
 package ro.wzt.launcher.tasks;
 
-import java.awt.Frame;
+import ro.wzt.launcher.utils.LogUtils;
+
+import javax.swing.*;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import javax.swing.JFrame;
-
-import ro.wzt.launcher.utils.LogUtils;
-
 public class StreamReader extends Thread {
 
-	private final String prefix;
-	private final InputStream input;
+    private final String prefix;
+    private final InputStream input;
 
-	public StreamReader(final String prefix, final InputStream input) {
-		this.prefix = prefix;
-		this.input = input;
-	}
+    public StreamReader(final String prefix, final InputStream input) {
+        this.prefix = prefix;
+        this.input = input;
+    }
 
-	@Override
-	public void run() {
-		try {
-			final BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-			String line = null;
-			while((line = reader.readLine()) != null) {
-				LogUtils.log(prefix + line);
-			}
-			reader.close();
-			for(final Frame frame : JFrame.getFrames()) {
-				if(!frame.isVisible()) {
-					frame.setVisible(true);
-				}
-			}
-		}
-		catch(final Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+    @Override
+    public void run() {
+        try {
+            final BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                LogUtils.log(prefix + line);
+            }
+            reader.close();
+            for (final Frame frame : JFrame.getFrames()) {
+                if (!frame.isVisible()) {
+                    frame.setVisible(true);
+                }
+            }
+        } catch (final Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
 }
