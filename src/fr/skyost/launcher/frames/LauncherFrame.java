@@ -94,7 +94,7 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 			public void actionPerformed(final ActionEvent event) {
 				final LauncherProfile profile = ProfilesManager.getProfile((String)cboxProfile.getSelectedItem());
 				if(profile.user == null) {
-					JOptionPane.showMessageDialog(null, "Profilul nu a putut fi lansat: userul este null.", "Error !", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Profilul nu a putut fi lansat: userul este null.", "Eroare", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				new GameTasks(profile, prgBarDownload).start();

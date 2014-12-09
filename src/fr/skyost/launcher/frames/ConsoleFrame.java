@@ -20,7 +20,7 @@ public class ConsoleFrame extends JFrame {
 	public ConsoleFrame() {
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setIconImage(LauncherConstants.LAUNCHER_ICON);
-		this.setTitle("Console");
+		this.setTitle("WZT-Launcher | Consola");
 		this.setType(Type.POPUP);
 		this.setPreferredSize(new Dimension(510, 330));
 		this.setLocation(Skyolauncher.config.consolePointX, Skyolauncher.config.consolePointY);

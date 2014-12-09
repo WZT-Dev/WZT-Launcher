@@ -19,7 +19,7 @@ import fr.skyost.launcher.ProfilesManager.LauncherProfile;
 import fr.skyost.launcher.UsersManager.User;
 import fr.skyost.launcher.frames.ConsoleFrame;
 import fr.skyost.launcher.frames.LauncherFrame;
-import fr.skyost.launcher.tasks.AutoUpdater;
+//import fr.skyost.launcher.tasks.AutoUpdater;
 import fr.skyost.launcher.tasks.ConnectivityChecker;
 import fr.skyost.launcher.tasks.RefreshToken;
 import fr.skyost.launcher.tasks.VanillaImporter;
@@ -102,7 +102,7 @@ public class Skyolauncher {
 			if(onlineUsers.size() != 0) {
 				new RefreshToken(onlineUsers.toArray(new User[onlineUsers.size()])).start();
 			}
-			new AutoUpdater().start();
+			//new AutoUpdater().start();
 		}
 		catch(final Exception ex) {
 			ex.printStackTrace();

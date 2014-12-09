@@ -33,7 +33,7 @@ public class UserFrame extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	public final JButton btnLogIn = new JButton("Log in !") {
+	public final JButton btnLogIn = new JButton("Logheaza-te") {
 
 		private static final long serialVersionUID = 1L;
 		{
@@ -54,15 +54,15 @@ public class UserFrame extends JDialog {
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		final Container pane = this.getContentPane();
 		pane.setBackground(background);
-		final JLabel lblUsername = new JLabel("Username :");
+		final JLabel lblUsername = new JLabel("Utilizator:");
 		lblUsername.setForeground(Color.BLACK);
 		final JTextField txtfldUsername = new JTextField();
 		txtfldUsername.setColumns(10);
-		final JLabel lblPassword = new JLabel("Password :");
+		final JLabel lblPassword = new JLabel("Parola:");
 		lblPassword.setForeground(Color.BLACK);
 		final JPasswordField pswrdfldPassword = new JPasswordField();
 		pswrdfldPassword.setEchoChar('x');
-		final JCheckBox chckbxOfflineMode = new JCheckBox("Offline mode");
+		final JCheckBox chckbxOfflineMode = new JCheckBox("Crack (offline mode)");
 		chckbxOfflineMode.addItemListener(new ItemListener() {
 
 			@Override
@@ -71,19 +71,19 @@ public class UserFrame extends JDialog {
 				pswrdfldPassword.setVisible(visible);
 				lblPassword.setVisible(visible);
 				if(visible) {
-					btnLogIn.setText("Log in !");
+					btnLogIn.setText("Logheaza-te");
 				}
 				else {
-					btnLogIn.setText("Save");
+					btnLogIn.setText("Salveaza");
 				}
 			}
 		});
 		if(account != null) {
-			this.setTitle("User editor");
+			this.setTitle("WZT-Launcher | Logheaza-te");
 			txtfldUsername.setText(account);
 		}
 		else {
-			this.setTitle("Add an user...");
+			this.setTitle("Adauga un utilizator...");
 		}
 		chckbxOfflineMode.setBackground(background);
 		chckbxOfflineMode.setForeground(Color.BLACK);
@@ -103,7 +103,7 @@ public class UserFrame extends JDialog {
 					}
 				}
 				else {
-					JOptionPane.showMessageDialog((Component)event.getSource(), "This user already exists !", "Error !", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog((Component)event.getSource(), "Userul exista deja!", "Eroare", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});

@@ -1,4 +1,4 @@
-package fr.skyost.launcher.tasks;
+/*package fr.skyost.launcher.tasks;
 
 import java.io.File;
 import java.util.logging.Level;
@@ -42,3 +42,4 @@ public class AutoUpdater extends Thread {
 	}
 	
 }
+*/

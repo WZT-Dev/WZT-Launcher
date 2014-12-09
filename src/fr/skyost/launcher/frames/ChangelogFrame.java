@@ -19,7 +19,7 @@ public class ChangelogFrame extends JDialog {
 	public ChangelogFrame() {
 		this.setIconImage(LauncherConstants.LAUNCHER_ICON);
 		this.setSize(406, 346);
-		this.setTitle("Changelog");
+		this.setTitle("WZT-Launcher | Changelog");
 		this.setModal(true);
 		this.setModalityType(ModalityType.APPLICATION_MODAL);
 		this.getContentPane().add(new JScrollPane(txtrChangeLog), BorderLayout.CENTER);
