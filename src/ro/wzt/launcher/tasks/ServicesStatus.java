@@ -11,8 +11,7 @@ import java.util.TimerTask;
 import com.google.gson.Gson;
 
 import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.Skyolauncher;
-import ro.wzt.launcher.utils.ConnectionUtils;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.utils.ConnectionUtils;
 
 public class ServicesStatus extends TimerTask {
@@ -35,7 +34,7 @@ public class ServicesStatus extends TimerTask {
 			for(final ServiceStatusListener listener : listeners) {
 				listener.onStatusCheckBegin();
 			}
-			if(Skyolauncher.isOnline) {
+			if(WZTLauncher.isOnline) {
 				final HashMap<?, ?>[] responses = new Gson().fromJson(ConnectionUtils.httpGet(LauncherConstants.STATUS_CHECK_URL, null), HashMap[].class);
 				for(final HashMap<?, ?> response : responses) {
 					for(final Entry<?, ?> entry : response.entrySet()) {

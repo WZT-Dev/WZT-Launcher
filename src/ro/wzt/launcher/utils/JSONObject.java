@@ -9,8 +9,7 @@ import java.lang.reflect.Field;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-import ro.wzt.launcher.Skyolauncher;
-import ro.wzt.launcher.Skyolauncher;
+import ro.wzt.launcher.WZTLauncher;
 
 public abstract class JSONObject {
 
@@ -75,9 +74,9 @@ public abstract class JSONObject {
 
 	public enum ObjectType {
 		
-		USER(new File(Skyolauncher.SYSTEM.getApplicationDirectory() + File.separator + "users")),
-		PROFILE(new File(Skyolauncher.SYSTEM.getApplicationDirectory() + File.separator + "profiles")),
-		CONFIG(Skyolauncher.SYSTEM.getApplicationDirectory());
+		USER(new File(WZTLauncher.SYSTEM.getApplicationDirectory() + File.separator + "users")),
+		PROFILE(new File(WZTLauncher.SYSTEM.getApplicationDirectory() + File.separator + "profiles")),
+		CONFIG(WZTLauncher.SYSTEM.getApplicationDirectory());
 
 		public final File directory;
 

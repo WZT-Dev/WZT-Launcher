@@ -19,24 +19,13 @@ import org.apache.commons.lang3.text.StrSubstitutor;
 
 import com.google.gson.Gson;
 
-import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.ProfilesManager.LauncherProfile;
-import ro.wzt.launcher.Skyolauncher;
-import ro.wzt.launcher.UsersManager;
-import ro.wzt.launcher.UsersManager.User;
-import ro.wzt.launcher.tasks.AuthUser.Property;
+import ro.wzt.launcher.*;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.utils.ConnectionUtils;
 import ro.wzt.launcher.utils.LogUtils;
-import ro.wzt.launcher.utils.SystemManager.OS;
-import ro.wzt.launcher.utils.SystemManager.Platform;
 import ro.wzt.launcher.utils.Utils;
-import ro.wzt.launcher.ProfilesManager;
-import ro.wzt.launcher.Skyolauncher;
 import ro.wzt.launcher.UsersManager;
-import ro.wzt.launcher.utils.ConnectionUtils;
-import ro.wzt.launcher.utils.LogUtils;
 import ro.wzt.launcher.utils.SystemManager;
-import ro.wzt.launcher.utils.Utils;
 
 public class GameTasks extends Thread {
 
@@ -55,7 +44,7 @@ public class GameTasks extends Thread {
 		for(final GameTasksListener listener : listeners) {
 			listener.onGameTasksBegin();
 		}
-		final SystemManager.Platform platform = Skyolauncher.SYSTEM.getPlatform();
+		final SystemManager.Platform platform = WZTLauncher.SYSTEM.getPlatform();
 		final SystemManager.OS os = platform.getOS();
 		String arch = platform.getArch().getName();
 		LogUtils.log(Level.INFO, LauncherConstants.GAME_TASKS_PREFIX + "Debug infos :");
@@ -228,7 +217,7 @@ public class GameTasks extends Thread {
 
 	private final boolean fixFile(final File file, final String fileUrl, final FileType type, final FixMode mode) throws IOException {
 		LogUtils.log(Level.INFO, LauncherConstants.GAME_TASKS_PREFIX + mode.name + " " + type.name + " : " + file.getPath() + ".");
-		if(Skyolauncher.isOnline) {
+		if(WZTLauncher.isOnline) {
 			LogUtils.log(Level.INFO, LauncherConstants.GAME_TASKS_PREFIX + (mode == FixMode.INVALID ? "Re-" : "") + "Downloading it.");
 			if(type != FileType.FILE) {
 				file.getParentFile().mkdirs();
@@ -264,7 +253,7 @@ public class GameTasks extends Thread {
 	}
 
 	public final void notifyListeners(final boolean success) {
-		if(!success && !Skyolauncher.isOnline) {
+		if(!success && !WZTLauncher.isOnline) {
 			LogUtils.log(Level.INFO, LauncherConstants.GAME_TASKS_PREFIX + "Please re-launch the selected version when you will be online.");
 		}
 		for(final GameTasksListener listener : listeners) {

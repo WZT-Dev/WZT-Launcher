@@ -8,18 +8,11 @@ import java.util.logging.Level;
 import com.google.gson.Gson;
 
 import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.Skyolauncher;
-import ro.wzt.launcher.UsersManager.User;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.frames.UserFrame;
-import ro.wzt.launcher.tasks.AuthUser.AuthSession;
-import ro.wzt.launcher.tasks.AuthUser.SimpleSession;
 import ro.wzt.launcher.utils.ConnectionUtils;
 import ro.wzt.launcher.utils.LogUtils;
-import ro.wzt.launcher.Skyolauncher;
 import ro.wzt.launcher.UsersManager;
-import ro.wzt.launcher.frames.UserFrame;
-import ro.wzt.launcher.utils.ConnectionUtils;
-import ro.wzt.launcher.utils.LogUtils;
 
 public class RefreshToken extends Thread {
 
@@ -36,12 +29,12 @@ public class RefreshToken extends Thread {
 			listener.onTokenTaskBegin();
 		}
 		final HashMap<UsersManager.User, AuthUser.AuthSession> result = new HashMap<UsersManager.User, AuthUser.AuthSession>();
-		if(Skyolauncher.isOnline) {
+		if(WZTLauncher.isOnline) {
 			try {
 				final Gson gson = new Gson();
 				for(final UsersManager.User user : users) {
 					LogUtils.log(Level.INFO, LauncherConstants.REFRESH_TOKEN_PREFIX + "Refreshing access token for " + user.accountName + "...");
-					final String response = ConnectionUtils.httpJsonPost(LauncherConstants.REFRESH_TOKEN_URL, gson.toJson(new AuthUser.SimpleSession(user.accessToken, Skyolauncher.config.clientToken)));
+					final String response = ConnectionUtils.httpJsonPost(LauncherConstants.REFRESH_TOKEN_URL, gson.toJson(new AuthUser.SimpleSession(user.accessToken, WZTLauncher.config.clientToken)));
 					final AuthUser.AuthSession session = gson.fromJson(response, AuthUser.AuthSession.class);
 					if(session.accessToken != null && session.clientToken != null) {
 						result.put(user, session);

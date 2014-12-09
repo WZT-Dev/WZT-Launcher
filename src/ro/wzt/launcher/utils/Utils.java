@@ -24,7 +24,7 @@ import javax.swing.plaf.FontUIResource;
 import org.apache.commons.lang3.StringUtils;
 
 import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.Skyolauncher;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.utils.SystemManager.OS;
 
 public class Utils {
@@ -158,14 +158,14 @@ public class Utils {
 
 	public static final String getJavaDir() {
 		final String path = System.getProperty("java.home") + File.separator + "bin" + File.separator;
-		if(Skyolauncher.SYSTEM.getPlatform().getOS() == OS.WINDOWS && new File(path + "javaw.exe").isFile()) {
+		if(WZTLauncher.SYSTEM.getPlatform().getOS() == OS.WINDOWS && new File(path + "javaw.exe").isFile()) {
 			return path + "javaw.exe";
 		}
 		return path + "java";
 	}
 	
 	public static final boolean isValidFileName(final String name) {
-		final File tempDir = Skyolauncher.SYSTEM.getLauncherTemporaryDirectory();
+		final File tempDir = WZTLauncher.SYSTEM.getLauncherTemporaryDirectory();
 		if(!tempDir.exists()) {
 			tempDir.mkdir();
 		}

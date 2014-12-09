@@ -10,9 +10,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.Skyolauncher;
-import ro.wzt.launcher.utils.LogUtils;
-import ro.wzt.launcher.Skyolauncher;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.utils.LogUtils;
 
 public class ConsoleFrame extends JFrame {
@@ -25,7 +23,7 @@ public class ConsoleFrame extends JFrame {
 		this.setTitle("WZT-Launcher | Consola");
 		this.setType(Type.POPUP);
 		this.setPreferredSize(new Dimension(510, 330));
-		this.setLocation(Skyolauncher.config.consolePointX, Skyolauncher.config.consolePointY);
+		this.setLocation(WZTLauncher.config.consolePointX, WZTLauncher.config.consolePointY);
 		final JTextArea txtrLogs = new JTextArea();
 		txtrLogs.setEditable(false);
 		txtrLogs.setFont(new Font("Lucida Console", Font.PLAIN, 14));

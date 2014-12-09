@@ -23,11 +23,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.ProfilesManager;
-import ro.wzt.launcher.ProfilesManager.LauncherProfile;
-import ro.wzt.launcher.Skyolauncher;
-import ro.wzt.launcher.UsersManager;
+import ro.wzt.launcher.*;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.UsersManager.User;
 import ro.wzt.launcher.frames.ProfileFrame.ProfileChangesListener;
 import ro.wzt.launcher.tasks.AuthUser.AuthSession;
@@ -39,7 +36,6 @@ import ro.wzt.launcher.tasks.ServicesStatus;
 import ro.wzt.launcher.tasks.ServicesStatus.ServiceStatusListener;
 import ro.wzt.launcher.utils.Utils;
 import ro.wzt.launcher.ProfilesManager;
-import ro.wzt.launcher.utils.Utils;
 
 import javax.swing.JProgressBar;
 
@@ -54,8 +50,8 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 			for(final String profile : ProfilesManager.getProfilesName()) {
 				addItem(profile);
 			}
-			if(Skyolauncher.config.latestProfile != null) {
-				setSelectedItem(Skyolauncher.config.latestProfile.toString());
+			if(WZTLauncher.config.latestProfile != null) {
+				setSelectedItem(WZTLauncher.config.latestProfile.toString());
 			}
 		}
 
@@ -78,10 +74,10 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 		GameTasks.addListener(this);
 		ProfileFrame.addListener(this);
 		ServicesStatus.addListener(this);
-		this.setTitle(Utils.buildTitle(Skyolauncher.isOnline));
+		this.setTitle(Utils.buildTitle(WZTLauncher.isOnline));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setIconImage(LauncherConstants.LAUNCHER_ICON);
-		this.setLocation(Skyolauncher.config.launcherPointX, Skyolauncher.config.launcherPointY);
+		this.setLocation(WZTLauncher.config.launcherPointX, WZTLauncher.config.launcherPointY);
 		this.setPreferredSize(new Dimension(540, 400));
 		this.setResizable(false);
 		final Container pane = this.getContentPane();
@@ -114,19 +110,19 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 			public void run() {
 				try {
 					if(ProfilesManager.getProfiles().length != 0) {
-						Skyolauncher.config.latestProfile = cboxProfile.getSelectedItem().toString();
+						WZTLauncher.config.latestProfile = cboxProfile.getSelectedItem().toString();
 					}
 					Point location;
-					if(Skyolauncher.console != null) {
-						location = Skyolauncher.console.getLocation();
-						Skyolauncher.config.consolePointX = location.x;
-						Skyolauncher.config.consolePointY = location.y;
+					if(WZTLauncher.console != null) {
+						location = WZTLauncher.console.getLocation();
+						WZTLauncher.config.consolePointX = location.x;
+						WZTLauncher.config.consolePointY = location.y;
 					}
 					location = LauncherFrame.this.getLocation();
-					Skyolauncher.config.launcherPointX = location.x;
-					Skyolauncher.config.launcherPointY = location.y;
-					Skyolauncher.config.save();
-					final File tempDir = Skyolauncher.SYSTEM.getLauncherTemporaryDirectory();
+					WZTLauncher.config.launcherPointX = location.x;
+					WZTLauncher.config.launcherPointY = location.y;
+					WZTLauncher.config.save();
+					final File tempDir = WZTLauncher.SYSTEM.getLauncherTemporaryDirectory();
 					if(tempDir.exists()) {
 						tempDir.delete();
 					}

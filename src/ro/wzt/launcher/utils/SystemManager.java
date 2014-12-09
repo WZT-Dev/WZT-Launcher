@@ -3,8 +3,7 @@ package ro.wzt.launcher.utils;
 import java.io.File;
 
 import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.Skyolauncher;
-import ro.wzt.launcher.Skyolauncher;
+import ro.wzt.launcher.WZTLauncher;
 
 public class SystemManager {
 
@@ -66,7 +65,7 @@ public class SystemManager {
 	}
 	
 	public final File getLauncherTemporaryDirectory() {
-		return new File(Skyolauncher.SYSTEM.getApplicationDirectory() + File.separator + "temp");
+		return new File(WZTLauncher.SYSTEM.getApplicationDirectory() + File.separator + "temp");
 	}
 
 	public enum OS {

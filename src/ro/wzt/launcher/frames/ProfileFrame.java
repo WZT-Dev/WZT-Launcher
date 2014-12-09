@@ -34,21 +34,13 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.ProfilesManager.LauncherProfile;
-import ro.wzt.launcher.Skyolauncher;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.UsersManager;
 import ro.wzt.launcher.UsersManager.User;
-import ro.wzt.launcher.frames.UserFrame.UserChangesListener;
 import ro.wzt.launcher.tasks.ChangelogDownloader;
 import ro.wzt.launcher.tasks.UpdateVersions;
-import ro.wzt.launcher.tasks.UpdateVersions.Version;
-import ro.wzt.launcher.tasks.UpdateVersions.VersionsListener;
-import ro.wzt.launcher.tasks.UpdateVersions.VersionsResult;
 import ro.wzt.launcher.utils.Utils;
 import ro.wzt.launcher.ProfilesManager;
-import ro.wzt.launcher.tasks.ChangelogDownloader;
-import ro.wzt.launcher.tasks.UpdateVersions;
-import ro.wzt.launcher.utils.Utils;
 
 public class ProfileFrame extends JDialog implements UserFrame.UserChangesListener, UpdateVersions.VersionsListener {
 
@@ -294,7 +286,7 @@ public class ProfileFrame extends JDialog implements UserFrame.UserChangesListen
 
 			@Override
 			public final void run() {
-				if(Skyolauncher.isOnline) {
+				if(WZTLauncher.isOnline) {
 					new UpdateVersions().start();
 				}
 				else {
@@ -320,7 +312,7 @@ public class ProfileFrame extends JDialog implements UserFrame.UserChangesListen
 		}
 		else {
 			txtfldProfileName.setText("Profil nou");
-			txtfldGameDir.setText(Skyolauncher.SYSTEM.getMinecraftDirectory().getPath());
+			txtfldGameDir.setText(WZTLauncher.SYSTEM.getMinecraftDirectory().getPath());
 			txtfldArguments.setText("-Xms512m -Xmx1024m");
 		}
 	}

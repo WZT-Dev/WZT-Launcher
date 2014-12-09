@@ -8,11 +8,8 @@ import javax.swing.JOptionPane;
 import com.google.gson.Gson;
 
 import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.Skyolauncher;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.UsersManager.User;
-import ro.wzt.launcher.frames.UserFrame;
-import ro.wzt.launcher.utils.ConnectionUtils;
-import ro.wzt.launcher.utils.LogUtils;
 import ro.wzt.launcher.frames.UserFrame;
 import ro.wzt.launcher.utils.ConnectionUtils;
 import ro.wzt.launcher.utils.LogUtils;
@@ -36,7 +33,7 @@ public class AuthUser extends Thread {
 		LogUtils.log(Level.INFO, LauncherConstants.AUTH_USER_PREFIX + "Password : " + password.replaceAll(".", "x"));
 		try {
 			final Gson gson = new Gson();
-			final AuthSession session = gson.fromJson(ConnectionUtils.httpJsonPost(LauncherConstants.AUTHENTICATION_URL, gson.toJson(new AuthRequest(username, password, Skyolauncher.config.clientToken))), AuthSession.class);
+			final AuthSession session = gson.fromJson(ConnectionUtils.httpJsonPost(LauncherConstants.AUTHENTICATION_URL, gson.toJson(new AuthRequest(username, password, WZTLauncher.config.clientToken))), AuthSession.class);
 			LogUtils.log(Level.INFO, LauncherConstants.AUTH_USER_PREFIX + "Done.");
 			parent.saveAndNotifyListeners(new User(session.selectedProfile.name, session.selectedProfile.id, username, true, session.accessToken, session.user.properties));
 		}

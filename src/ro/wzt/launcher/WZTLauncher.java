@@ -35,7 +35,7 @@ import ro.wzt.launcher.tasks.VanillaImporter;
 import ro.wzt.launcher.utils.LogUtils;
 import ro.wzt.launcher.utils.Utils;
 
-public class Skyolauncher {
+public class WZTLauncher {
 
 	public static final SystemManager SYSTEM = new SystemManager();
 	

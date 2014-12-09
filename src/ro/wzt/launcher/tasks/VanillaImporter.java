@@ -12,10 +12,9 @@ import javax.swing.JOptionPane;
 import com.google.gson.Gson;
 
 import ro.wzt.launcher.LauncherConstants;
-import ro.wzt.launcher.Skyolauncher;
+import ro.wzt.launcher.WZTLauncher;
 import ro.wzt.launcher.UsersManager;
 import ro.wzt.launcher.frames.UserFrame;
-import ro.wzt.launcher.utils.Utils;
 import ro.wzt.launcher.utils.Utils;
 
 public class VanillaImporter extends Thread {
@@ -41,8 +40,8 @@ public class VanillaImporter extends Thread {
 				final JCheckBox notAskAgain = new JCheckBox("Do not ask again.");
 				final int response = JOptionPane.showConfirmDialog(null, new Object[]{desc, notAskAgain}, LauncherConstants.LAUNCHER_NAME, JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
 				if(notAskAgain.isSelected() || response == JOptionPane.OK_OPTION) {
-					Skyolauncher.config.vanillaDataImported = true;
-					Skyolauncher.config.save();
+					WZTLauncher.config.vanillaDataImported = true;
+					WZTLauncher.config.save();
 					if(response == JOptionPane.OK_OPTION) {
 						for(final VanillaUser vanillaUser : users) {
 							new UserFrame(null, vanillaUser.username).setVisible(true);

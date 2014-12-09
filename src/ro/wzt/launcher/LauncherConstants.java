@@ -110,7 +110,7 @@ public class LauncherConstants {
 
 	private static final Font loadFontFromRes(final int format, final String path, final float size) {
 		try {
-			return Font.createFont(format, Skyolauncher.class.getResourceAsStream(path)).deriveFont(size);
+			return Font.createFont(format, WZTLauncher.class.getResourceAsStream(path)).deriveFont(size);
 		}
 		catch(final Exception ex) {
 			ex.printStackTrace();
@@ -119,7 +119,7 @@ public class LauncherConstants {
 	}
 
 	private static final Image loadImageFromRes(final String path) {
-		return Toolkit.getDefaultToolkit().getImage(Skyolauncher.class.getResource(path));
+		return Toolkit.getDefaultToolkit().getImage(WZTLauncher.class.getResource(path));
 	}
 
 }
