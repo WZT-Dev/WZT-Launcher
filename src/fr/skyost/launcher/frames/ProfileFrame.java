@@ -66,7 +66,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 	protected final JTextField txtfldArguments = new JTextField();
 	protected final JComboBox<String> cboxVersion = new JComboBox<String>();
 	protected final JButton btnRefreshList = new JButton("Refresh...");
-	protected final JCheckBox chckbxLeaveLauncherVisible = new JCheckBox("Leave launcher visible") {
+	protected final JCheckBox chckbxLeaveLauncherVisible = new JCheckBox("Nu inchide launcherul") {
 
 		private static final long serialVersionUID = 1L;
 		{
@@ -84,7 +84,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 		}
 
 	};
-	protected JLabel lblUseravatar = new JLabel("UserAvatar") {
+	protected JLabel lblUseravatar = new JLabel("Avatar") {
 
 		private static final long serialVersionUID = 1L;
 		{
@@ -93,7 +93,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 		}
 
 	};
-	protected final JButton btnSave = new JButton("Save") {
+	protected final JButton btnSave = new JButton("Salveaza") {
 
 		private static final long serialVersionUID = 1L;
 		{
@@ -121,7 +121,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 		this.setAlwaysOnTop(true);
 		this.loadedProfile = profile;
 		this.setIconImage(LauncherConstants.LAUNCHER_ICON);
-		this.setTitle("WZT-Launcher Profile Editor");
+		this.setTitle("WZT-Launcher | Editor de profile");
 		this.setPreferredSize(new Dimension(720, 292));
 		this.setType(Type.POPUP);
 		final Container pane = this.getContentPane();
@@ -136,10 +136,10 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 			}
 
 		});
-		final JLabel lblProfileName = new JLabel("Profile name :");
+		final JLabel lblProfileName = new JLabel("Nume profil:");
 		lblProfileName.setForeground(Color.BLACK);
 		txtfldProfileName.setColumns(10);
-		final JLabel lblUser = new JLabel("User :");
+		final JLabel lblUser = new JLabel("Utilizator:");
 		lblUser.setForeground(Color.BLACK);
 		final JComboBox<String> cboxUser = new JComboBox<String>(model);
 		cboxUser.addActionListener(new ActionListener() {
@@ -150,7 +150,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 			}
 
 		});
-		final JButton btnAddAnUser = new JButton("Add an user...");
+		final JButton btnAddAnUser = new JButton("Adauga un utilizator...");
 		btnAddAnUser.addActionListener(new ActionListener() {
 
 			@Override
@@ -159,7 +159,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 			}
 
 		});
-		final JButton btnDeleteThisUser = new JButton("Delete this user...");
+		final JButton btnDeleteThisUser = new JButton("Sterge utilizatorul...");
 		btnDeleteThisUser.addActionListener(new ActionListener() {
 
 			@Override
@@ -171,7 +171,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 			}
 
 		});
-		final JLabel lblGameDir = new JLabel("Game dir :");
+		final JLabel lblGameDir = new JLabel("Folderul jocului:");
 		lblGameDir.setForeground(Color.BLACK);
 		txtfldGameDir.setColumns(10);
 		txtfldGameDir.setEnabled(false);
@@ -190,10 +190,10 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 			}
 
 		});
-		final JLabel lblArguments = new JLabel("Arguments :");
+		final JLabel lblArguments = new JLabel("Argumente:");
 		lblArguments.setForeground(Color.BLACK);
 		txtfldArguments.setColumns(10);
-		final JLabel lblVersion = new JLabel("Version :");
+		final JLabel lblVersion = new JLabel("Versiune:");
 		lblVersion.setForeground(Color.BLACK);
 		btnRefreshList.addActionListener(new ActionListener() {
 
@@ -222,11 +222,11 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 				final String arguments = txtfldArguments.getText();
 				final String version = (String)cboxVersion.getSelectedItem();
 				if(profileName.length() == 0 || username == null || gameDirPath.length() == 0 || version == null) {
-					JOptionPane.showMessageDialog(null, "Please fill every field.", "Skyolauncher Profile Editor", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Completeaza toate campurile!", "WZT-Launcher | Editor de profile", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				if(!Utils.isValidFileName(profileName)) {
-					JOptionPane.showMessageDialog(null, "This name is not valid !", "Skyolauncher Profile Editor", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Nume invalid!", "WZT-Launcher | Editor de profile", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				final File gameDir = new File(gameDirPath);
@@ -259,7 +259,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 			@Override
 			public void run() {
 				lblUseravatar.setIcon(null);
-				lblUseravatar.setText("Loading...");
+				lblUseravatar.setText("Se incarca...");
 				BufferedImage image = cache.get(username);
 				if(image == null) {
 					try {
@@ -294,7 +294,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 					new UpdateVersions().start();
 				}
 				else {
-					new UpdateVersions(new File(txtfldGameDir.getText() + File.separator + "versions")).start();
+					new UpdateVersions(new File(txtfldGameDir.getText() + File.separator + "versiuni")).start();
 				}
 			}
 
@@ -315,7 +315,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 			chckbxLogMinecraft.setSelected(profile.logMinecraft);
 		}
 		else {
-			txtfldProfileName.setText("New profile");
+			txtfldProfileName.setText("Profil nou");
 			txtfldGameDir.setText(Skyolauncher.SYSTEM.getMinecraftDirectory().getPath());
 			txtfldArguments.setText("-Xms512m -Xmx1024m");
 		}
@@ -333,7 +333,7 @@ public class ProfileFrame extends JDialog implements UserChangesListener, Versio
 	public void onVersionsCheckBegin() {
 		btnRefreshList.setEnabled(false);
 		btnSave.setEnabled(false);
-		btnSave.setText("Please wait...");
+		btnSave.setText("Asteapta...");
 	}
 
 	@Override

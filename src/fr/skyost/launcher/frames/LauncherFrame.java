@@ -59,9 +59,9 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 
 	};
 	private final HashMap<String, JLabel> status = new HashMap<String, JLabel>();
-	private final JButton btnDeleteProfile = new JButton("Delete profile...");
-	private final JButton btnEditProfile = new JButton("Edit profile...");
-	private final JButton btnPlay = new JButton("Play !") {
+	private final JButton btnDeleteProfile = new JButton("Sterge profilul...");
+	private final JButton btnEditProfile = new JButton("Editeaza profilul...");
+	private final JButton btnPlay = new JButton("Joaca") {
 
 		private static final long serialVersionUID = 1L;
 		{
@@ -94,7 +94,7 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 			public void actionPerformed(final ActionEvent event) {
 				final LauncherProfile profile = ProfilesManager.getProfile((String)cboxProfile.getSelectedItem());
 				if(profile.user == null) {
-					JOptionPane.showMessageDialog(null, "Cannot launch the selected profile : user is null.", "Error !", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Profilul nu a putut fi lansat: userul este null.", "Error !", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				new GameTasks(profile, prgBarDownload).start();
@@ -131,16 +131,16 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 				}
 				catch(final Exception ex) {
 					ex.printStackTrace();
-					JOptionPane.showMessageDialog(null, ex.getClass().getName(), "Error !", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, ex.getClass().getName(), "Eroare", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 
 		});
-		final JLabel lblMinecraftWebsite = new JLabel("Minecraft website :");
+		final JLabel lblMinecraftWebsite = new JLabel("Site oficial Minecraft:");
 		lblMinecraftWebsite.setForeground(Color.BLACK);
-		final JLabel lblMojangAuthServer = new JLabel("Mojang auth server :");
+		final JLabel lblMojangAuthServer = new JLabel("Server autentificare Mojang:");
 		lblMojangAuthServer.setForeground(Color.BLACK);
-		final JLabel lblMinecraftSkinsServer = new JLabel("Minecraft skins server :");
+		final JLabel lblMinecraftSkinsServer = new JLabel("Server skinuri Minecraft:");
 		lblMinecraftSkinsServer.setForeground(Color.BLACK);
 		final JLabel lblMinecraftWebsiteStatus = new JLabel();
 		final JLabel lblMojangAuthServerStatus = new JLabel();
@@ -149,7 +149,7 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 		status.put("authserver.mojang.com", lblMojangAuthServerStatus);
 		status.put("skins.minecraft.net", lblMinecraftSkinsServerStatus);
 		new Timer().scheduleAtFixedRate(new ServicesStatus(status.keySet()), 0, 40000);
-		final JButton btnAddNewProfile = new JButton("Add new profile...");
+		final JButton btnAddNewProfile = new JButton("Adauga profil...");
 		btnAddNewProfile.addActionListener(new ActionListener() {
 
 			@Override
@@ -199,7 +199,7 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 	@Override
 	public void onStatusCheckBegin() {
 		for(final JLabel label : status.values()) {
-			label.setText("Please wait...");
+			label.setText("Asteapta...");
 			label.setFont(label.getFont().deriveFont(Font.ITALIC));
 			label.setForeground(Color.BLACK);
 		}
@@ -215,7 +215,7 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 				label.setForeground(new Color(255, 255, 255));
 			}
 			else {
-				label.setText("UNREACHABLE");
+				label.setText("INDISPONIBIL");
 				label.setForeground(Color.RED);
 			}
 			label.setFont(font);
@@ -289,12 +289,12 @@ public class LauncherFrame extends JFrame implements ProfileChangesListener, Ser
 
 	private final void updateBtnPlay(final boolean enabled) {
 		if(!enabled) {
-			btnPlay.setText(ProfilesManager.getProfiles().length != 0 ? "Please wait..." : "Create a new profile first !");
+			btnPlay.setText(ProfilesManager.getProfiles().length != 0 ? "Asteapta..." : "Creaza-ti un profil intai!");
 			btnPlay.setEnabled(false);
 		}
 		else if(!profileEditor.isVisible() && tokensRefreshed && ProfilesManager.getProfiles().length != 0) {
 			btnPlay.setEnabled(true);
-			btnPlay.setText("Play !");
+			btnPlay.setText("Joaca");
 		}
 	}
 
