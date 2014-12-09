@@ -21,5 +21,6 @@ Donations
 ---------
 Donate to us :)
 [![Paypal](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DLWHGVER4R986)
+
 Donate to Skyost for making the base-code of this awesome launcher! :)
 [![Paypal](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XLEBVBMQNTXMY)
