@@ -1,16 +1,14 @@
-![Skyolauncher](https://raw.githubusercontent.com/Skyost/Skyolauncher/master/src/fr/skyost/launcher/res/Skyolauncher.png)
+![WZT-Launcher](https://raw.githubusercontent.com/WallE256/WZT-Launcher/master/src/ro/wzt/launcher/res/launcher-banner.png)
 
-Skyolauncher is a lightweight Minecraft launcher that you can customize by getting the source code.
+WZT-Launcher is a lightweight Minecraft launcher, forked from Skyolauncher.
 
 Screenshots
 -----------
-![Main frame](http://www.skyost.eu/skyolauncher/res/s1.png)
-![Built-in console](http://www.skyost.eu/skyolauncher/res/s2.png)
-![Profile editor](http://www.skyost.eu/skyolauncher/res/s3.png)
+In progress...
 
 Downloads
 ---------
-You can download it [here](http://www.skyost.eu/skyolauncher/download.php).
+Still in alpha, come back later! :)
 
 Compile
 -------
@@ -21,4 +19,7 @@ You will need 3 libraries :
 
 Donations
 ---------
+Donate to us :)
+[![Paypal](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DLWHGVER4R986)
+Donate to Skyost for making the base-code of this awesome launcher! :)
 [![Paypal](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XLEBVBMQNTXMY)
