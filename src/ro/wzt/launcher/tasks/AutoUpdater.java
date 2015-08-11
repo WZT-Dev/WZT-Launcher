@@ -1,13 +1,13 @@
-/*package fr.skyost.launcher.tasks;
+package ro.wzt.launcher.tasks;
 
 import java.io.File;
 import java.util.logging.Level;
 
-import fr.skyost.launcher.LauncherConstants;
-import fr.skyost.launcher.Skyolauncher;
-import fr.skyost.launcher.utils.ConnectionUtils;
-import fr.skyost.launcher.utils.LogUtils;
-import fr.skyost.launcher.utils.Utils;
+import ro.wzt.launcher.LauncherConstants;
+import ro.wzt.launcher.WZTLauncher;
+import ro.wzt.launcher.utils.ConnectionUtils;
+import ro.wzt.launcher.utils.LogUtils;
+import ro.wzt.launcher.utils.Utils;
 
 public class AutoUpdater extends Thread {
 
@@ -19,7 +19,7 @@ public class AutoUpdater extends Thread {
 			if(Utils.compareVersions(remoteVersion, LauncherConstants.LAUNCHER_VERSION)) {
 				LogUtils.log(Level.INFO, LauncherConstants.AUTO_UPDATER_PREFIX + "An update was found : " + remoteVersion + ".");
 				LogUtils.log(Level.INFO, LauncherConstants.AUTO_UPDATER_PREFIX + "Downloading it...");
-				String path = Skyolauncher.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+				String path = WZTLauncher.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 				path = path.substring(0, path.lastIndexOf(".jar")) + " v" + remoteVersion + ".jar";
 				final File destination = new File(path);
 				if(destination.exists()) {
@@ -42,4 +42,3 @@ public class AutoUpdater extends Thread {
 	}
 	
 }
-*/

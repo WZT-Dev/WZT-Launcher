@@ -44,8 +44,8 @@ public class LauncherConstants {
 	/* AutoUpdater options. */
 
     public static final String AUTO_UPDATER_PREFIX = "[Updater] ";
-    public static final String LATEST_VERSION_TXT = "http://www.skyost.eu/skyolauncher/latest.txt";
-    public static final String LATEST_VERSION_JAR = "http://www.skyost.eu/skyolauncher/download.php";
+    public static final String LATEST_VERSION_TXT = "http://forum.wzt.ro/launcher/latest.txt";
+    public static final String LATEST_VERSION_JAR = "http://forum.wzt.ro/launcher/WZTLauncher.jar";
 
 	/* ConnectivityChecker options. */
 
