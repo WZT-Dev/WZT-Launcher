@@ -45,7 +45,7 @@ public class LauncherConstants {
 
     public static final String AUTO_UPDATER_PREFIX = "[Updater] ";
     public static final String LATEST_VERSION_TXT = "http://forum.wzt.ro/launcher/latest.txt";
-    public static final String LATEST_VERSION_JAR = "http://forum.wzt.ro/launcher/WZTLauncher.jar";
+    public static final String LATEST_VERSION_JAR = "http://forum.wzt.ro/launcher/WZT-Launcher.jar";
 
 	/* ConnectivityChecker options. */
 
