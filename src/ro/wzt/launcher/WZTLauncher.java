@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 
-import ro.wzt.launcher.tasks.AutoUpdater;
+//import ro.wzt.launcher.tasks.AutoUpdater;
 
 public class WZTLauncher {
 
@@ -92,7 +92,7 @@ public class WZTLauncher {
             if (onlineUsers.size() != 0) {
                 new RefreshToken(onlineUsers.toArray(new User[onlineUsers.size()])).start();
             }
-            new AutoUpdater().start();
+            //new AutoUpdater().start();
         } catch (final Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(null, ex.getClass().getName(), "Error !", JOptionPane.ERROR_MESSAGE);
